@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>身體覺察精神卡 - 步向清醒</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Noto Sans TC', sans-serif;
+      background: linear-gradient(to bottom, #f0f8f5, #e3f2fd);
+      color: #2e3c3f;
+      padding: 2rem;
+      text-align: center;
+    }
+    h1 {
+      font-size: 42px;
+      color: #3c6e71;
+      margin-bottom: 0.5rem;
+    }
+    p.subtitle {
+      font-size: 20px;
+      margin-bottom: 2rem;
+      color: #5a8577;
+    }
+    .wheel-btn {
+      font-size: 22px;
+      padding: 1rem 2rem;
+      margin-top: 1.5rem;
+      border: none;
+      border-radius: 30px;
+      background-color: #ffdd57;
+      color: #2e3c3f;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .wheel-btn:hover {
+      background-color: #ffd633;
+    }
+    .card-box {
+      margin-top: 2rem;
+      padding: 2rem;
+      background-color: #ffffffcc;
+      border-radius: 20px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      font-size: 22px;
+      line-height: 1.6;
+      min-height: 200px;
+    }
+    .fade-in {
+      animation: fadeIn 1s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <h1>🌸 身體覺察精神卡</h1>
+  <p class="subtitle">為自己抽一張今天的身體精神卡，點開心情，練習安靜，準備走向清醒的一步！</p>
+
+  <button class="wheel-btn" onclick="drawCard()">🍀 開始轉盤！</button>
+
+  <div id="cardResult" class="card-box"></div>
+
+  <script>
+    const cards = [
+      '🐘「大象腳步卡」<br>請你試著用「最重」的腳步慢慢走路，觀察你的腳碰到地面時，地板有什麼感覺？身體有什麼變化？',
+      '🐭「老鼠腳步卡」<br>你的任務是讓腳步變成「無聲無息」，像老鼠一樣悅悅走路。你用了身體的哪些部位來控制自己？',
+      '🦶「腳底探險卡」<br>每走一步時，觀察腳底從腳跑到腳尖的觸地順序。哪一部分碰到地時最有感覺？哪一部分你常常沒有注意到？',
+      '🧪「身體冰塊卡」<br>在心裡慢慢數五下，把自己的動作變成一個超慢速的冰塊移動。你在移動時有沒有感覺到平衡？重心在哪裡？',
+      '💪「一邊重一邊輕卡」<br>讓你的左邊身體像裝了石頭一樣沉重，右邊身體像氣球一樣輕粗。試著走路時感受左右不一樣的重量變化。',
+      '🐙「童手卡」<br>當你走路時，把手自然垂放。觀察它們怎麼隨著你身體擺動，是節奏一致的嗎？可以讓它像童手一樣柔軟嗎？',
+      '🌬「呼吸帶動卡」<br>感覺你的呼吸如何帶動身體的律動？吸氣時身體變化？吐氣時呢？呼吸跟腳步之間有什麼連結嗎？',
+      '🧐「站立掃描卡」<br>停下來不動 10 秒，從腳底開始，慢慢觀察你身體每一個部位：腳跑、小腿、膝蓋、大腿、腰、肩膀．…感覺它們的狀態（放鬆？緊繃？麻麻的？）',
+      '🎯「重心挑戰卡」<br>你能走路時感受到自己身體的「重心」在哪裡嗎？試著調整你的姿勢，看重心有什麼變化。',
+      '📦「頭上有箱子卡」<br>想像你的頭上有一個小箱子，走路時不能讓它掉下來。這會怎麼影響你走路的速度、姿勢、注意力？',
+      '🧘‍♀️「超級平衡卡」<br>在不離開路線的情況下，試著走在一條看不見的直線上，像走鋼線一樣，每一步都要「穩」。哪一邊比較不穩？哪裡容易歪？'
+    ];
+
+    function drawCard() {
+      const cardBox = document.getElementById('cardResult');
+      cardBox.classList.remove('fade-in');
+      setTimeout(() => {
+        const card = cards[Math.floor(Math.random() * cards.length)];
+        cardBox.innerHTML = card;
+        cardBox.classList.add('fade-in');
+      }, 500);
+    }
+  </script>
+</body>
+</html>
